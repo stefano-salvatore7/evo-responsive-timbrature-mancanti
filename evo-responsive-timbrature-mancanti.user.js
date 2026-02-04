@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          EVO - Responsive Timbratura Manuale
 // @namespace     https://unibo.it/
-// @version       1.0
+// @version       1.1
 // @description   Rende responsive la pagina "Timbratura Manuale" (Timbrature Mancanti) su smartphone con font grandi e layout ottimizzato
 // @author        Stefano
 // @match         https://personale-unibo.hrgpi.it/*
@@ -183,11 +183,15 @@
                     font-size: 1.7rem !important;
                 }
 
-                /* Fix per il layout dei radio buttons: colonna su mobile */
+                /* Fix per il layout dei radio buttons: 2 per riga (sinistra / destra) */
                 .formTable td.d-flex {
-                    flex-direction: column !important;
-                    align-items: flex-start !important;
+                    flex-wrap: wrap !important;
                     padding-left: 0 !important;
+                }
+
+                .formTable td.d-flex .form-check {
+                    width: 50% !important;
+                    margin-bottom: 0.6rem !important;
                 }
 
                 /* Messaggi di errore */
